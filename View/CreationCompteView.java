@@ -5,8 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Controller.CreerCompteController;
-
 public class CreationCompteView extends JFrame {
 
     private JTextField nomField;
