@@ -61,7 +61,6 @@ public class CreationCompteView extends JFrame {
             }
         });
 
-        // Rendre la fenêtre visible ici
         setVisible(true);
     }
 }

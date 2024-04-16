@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class CreationCompteModele {
+    //commentaires
     public static void creerCompte(String Nom, String Mail, String MotDePasse, String Statut) {
         try (Connection connexion = ConnexionBDD.obtenirConnexion()) {
             String sql = "INSERT INTO utilisateur (Nom, Mail, MotDePasse, Statut) VALUES (?, ?, ?, ?)";
