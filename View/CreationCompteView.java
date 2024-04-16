@@ -1,29 +1,67 @@
 package View;
 
-import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class CreationCompteView {
+import Controller.CreerCompteController;
 
-    Scanner scanner = new Scanner(System.in);
+public class CreationCompteView extends JFrame {
 
-    System.out.println("Creation de compte :");
-    System.out.print("Nom : ");
-    String nom = scanner.nextLine();
+    private JTextField nomField;
+    private JTextField mailField;
+    private JPasswordField passwordField;
+    private JTextField statutField;
 
-    System.out.print("Mail : ");
-    String email = scanner.nextLine();
+    public CreationCompteView() {
+        setTitle("Création de compte");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(300, 200);
+        setLocationRelativeTo(null);
 
-    System.out.print("Mot de passe : ");
-    String motDePasse = scanner.nextLine();
+        JPanel panel = new JPanel(new GridLayout(5, 2));
+        JLabel nomLabel = new JLabel("Nom : ");
+        nomField = new JTextField();
+        JLabel mailLabel = new JLabel("Mail : ");
+        mailField = new JTextField();
+        JLabel passwordLabel = new JLabel("Mot de passe : ");
+        passwordField = new JPasswordField();
+        JLabel statutLabel = new JLabel("Statut (client ou employé) : ");
+        statutField = new JTextField();
+        JButton creerButton = new JButton("Créer");
 
-    // Vous pouvez également ajouter une confirmation de mot de passe ici
+        panel.add(nomLabel);
+        panel.add(nomField);
+        panel.add(mailLabel);
+        panel.add(mailField);
+        panel.add(passwordLabel);
+        panel.add(passwordField);
+        panel.add(statutLabel);
+        panel.add(statutField);
+        panel.add(new JLabel()); // Pour occuper la colonne vide
+        panel.add(creerButton);
 
-    // En supposant que le statut par défaut soit "client"
-    String statut = "client";
+        add(panel);
 
-    // Une fois que vous avez collecté les informations, vous pouvez les transmettre au contrôleur pour le traitement ultérieur
+        creerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nom = nomField.getText();
+                String mail = mailField.getText();
+                String motDePasse = new String(passwordField.getPassword());
+                String statut = statutField.getText();
 
-    scanner.close();
+                // Envoyer les données au contrôleur
+                // Vous pouvez utiliser une méthode du contrôleur pour gérer cela
+                String[] newUser = {nom, mail, motDePasse, statut};
+                // Passer les données au contrôleur
+                // Vous pouvez utiliser une méthode du contrôleur pour gérer cela
+                CreerCompteController.creerCompte(newUser);
+            }
+        });
 
+        // Rendre la fenêtre visible ici
+        setVisible(true);
+    }
 }
-
