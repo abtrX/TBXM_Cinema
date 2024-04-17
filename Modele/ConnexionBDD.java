@@ -31,10 +31,10 @@ public class ConnexionBDD {
     public static void main(String[] args) {
         try {
             Connection connexion = obtenirConnexion();
-
+            String statutUtilisateur = null;
             // Appeler la page d'accueil en lui passant la connexion
-            PageAccueil pageAccueil = new PageAccueil(connexion);
-
+            PageAccueil pageAccueil = new PageAccueil(connexion, statutUtilisateur);
+            pageAccueil.setVisible(true);
             // Fermeture de la connexion à la base de données
             fermerConnexion(connexion);
         } catch (SQLException e) {

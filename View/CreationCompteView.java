@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import Controller.CreerCompteController;
 
@@ -13,8 +14,9 @@ public class CreationCompteView extends JFrame {
     private JTextField mailField;
     private JPasswordField passwordField;
     private JTextField statutField;
+    private Connection connexion;
 
-    public CreationCompteView() {
+    public CreationCompteView(Connection connexion) {
         setTitle("Création de compte");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 200);
@@ -57,7 +59,7 @@ public class CreationCompteView extends JFrame {
                 String[] newUser = {nom, mail, motDePasse, statut};
                 // Passer les données au contrôleur
                 // Vous pouvez utiliser une méthode du contrôleur pour gérer cela
-                CreerCompteController.creerCompte(newUser);
+                CreerCompteController.creerCompte(newUser, connexion);
             }
         });
 

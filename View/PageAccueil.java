@@ -13,7 +13,8 @@ import Modele.ListeFilms;
 public class PageAccueil extends JFrame {
     private Connection connexion;
 
-    public PageAccueil(Connection connexion) {
+
+    public PageAccueil(Connection connexion, String statutUtilisateur) {
         this.connexion = connexion;
         // Créer le panneau principal avec un fond sombre
         JPanel contentPane = new JPanel() {
@@ -38,7 +39,7 @@ public class PageAccueil extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ConnexionView connexionView = new ConnexionView();
+                ConnexionView connexionView = new ConnexionView(statutUtilisateur, connexion);
                 connexionView.setVisible(true);
             }
         });
@@ -54,7 +55,7 @@ public class PageAccueil extends JFrame {
 
         // Pour chaque film, créer un bouton représentant ce film
         for (Film film : films) {
-            JButton filmButton = new JButton(film.getNom()); // Suppose que getTitre() retourne le titre du film
+            JButton filmButton = new JButton(film.getNom()); // Suppose que getNom() retourne le titre du film
             filmButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {

@@ -1,32 +1,23 @@
 package Controller;
 
 import Modele.ConnexionModele;
+import View.ConnexionView;
+import View.PageAccueil;
+import java.sql.Connection;
 
 public class ConnexionController {
+    private Connection connexion;
 
-    public static void connecter(String[] informationsConnexion) {
-        //commentaires
-        String statutUtilisateur = ConnexionModele.connecter(informationsConnexion);
-
-        if (statutUtilisateur != null) {
-            // Si les informations de connexion sont valides, ouvrir la page appropriée
-            if (statutUtilisateur.equals("client")) {
-                System.out.println("page client");
-                //ClientView.ouvrirPageClient();
-            } else if (statutUtilisateur.equals("employe")) {
-                //EmployeView.ouvrirPageEmploye();
-                System.out.println("page employe");
-            }
-        } else {
-            // Si les informations de connexion sont invalides, afficher un message d'erreur
-            System.out.println("je change pour le git");
-            System.out.println("je change pour le git");
-            System.out.println("je change pour le git");
-            System.out.println("je change pour le git");
-            System.out.println("je change pour le git");
-            System.out.println("je change pour le git");
-            System.out.println("je change pour le git");
-            //ConnexionView.afficherMessageErreur();
-        }
+    public static void connecter(String[] informationsConnexion, String statutUtilisateur, Connection connexion) {
+    statutUtilisateur = ConnexionModele.connecter(informationsConnexion);
+    while (statutUtilisateur == null) {
+        ConnexionView connexionView = new ConnexionView(statutUtilisateur, connexion);
+        connexionView.setVisible(true);
+        //print un message d'erreur invitant à l'utilisateur à recommencer
+    }
+    // Si les informations de connexion sont valides, ouvrir la page appropriée
+    PageAccueil pageAccueil = new PageAccueil(connexion, statutUtilisateur);
+    pageAccueil.setVisible(true);
     }
 }
+
