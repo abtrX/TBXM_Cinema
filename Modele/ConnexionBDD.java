@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import View.PageAccueil;
+
 public class ConnexionBDD {
     private static final String URL = "jdbc:mysql://localhost:3306/bdd_cinema";
     private static final String UTILISATEUR = "root";
@@ -28,15 +30,10 @@ public class ConnexionBDD {
 
     public static void main(String[] args) {
         try {
-            // Obtention de la connexion à la base de données
             Connection connexion = obtenirConnexion();
 
-            // Appeler votre vue de connexion
-            ConnexionView connexionView = new ConnexionView();
-            connexionView.setVisible(true);
-            String[] informationsConnexion = connexionView.saisirInformationsConnexion();
-
-            ConnexionController.connecter(informationsConnexion);
+            // Appeler la page d'accueil en lui passant la connexion
+            PageAccueil pageAccueil = new PageAccueil(connexion);
 
             // Fermeture de la connexion à la base de données
             fermerConnexion(connexion);

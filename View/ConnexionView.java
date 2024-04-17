@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Controller.ConnexionController;
+
 
 public class ConnexionView extends JFrame {
     private JTextField mailField;

@@ -1,6 +1,7 @@
 package Controller;
 
 import Modele.CreationCompteModele;
+import View.ConnexionView;
 
 public class CreerCompteController {
 
@@ -10,7 +11,7 @@ public class CreerCompteController {
         String MotDePasse = donneesUtilisateur[2];
         String Statut = donneesUtilisateur[3];
         CreationCompteModele.creerCompte(Nom, Mail, MotDePasse, Statut);
-        // Redirection vers la page de connexion ou autre traitement nécessaire
-        System.out.println("Page Connexion");
+        ConnexionView connexionView = new ConnexionView();
+        connexionView.setVisible(true);
     }
 }

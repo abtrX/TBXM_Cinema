@@ -1,5 +1,7 @@
 package Controller;
 
+import Modele.ConnexionModele;
+
 public class ConnexionController {
 
     public static void connecter(String[] informationsConnexion) {
@@ -13,7 +15,7 @@ public class ConnexionController {
                 //ClientView.ouvrirPageClient();
             } else if (statutUtilisateur.equals("employe")) {
                 //EmployeView.ouvrirPageEmploye();
-                System.out.println("page client");
+                System.out.println("page employe");
             }
         } else {
             // Si les informations de connexion sont invalides, afficher un message d'erreur
