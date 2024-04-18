@@ -11,13 +11,10 @@ import Modele.ListeFilms.Film;
 import Modele.ListeFilms;
 
 public class PageAccueil extends JFrame {
-    private Connection connexion;
 
-
-    public PageAccueil(Connection connexion, String statutUtilisateur) {
-        this.connexion = connexion;
-        // Créer le panneau principal avec un fond sombre
-        JPanel contentPane = new JPanel() {
+    public PageAccueil(String statutUtilisateur) {
+        Connection connexion;
+        JPanel buttonPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -25,37 +22,55 @@ public class PageAccueil extends JFrame {
                 g.fillRect(0, 0, getWidth(), getHeight());
             }
         };
-        contentPane.setLayout(new BorderLayout());
+        buttonPanel.setLayout(new BorderLayout());
 
         // Barre de recherche
         JTextField searchField = new JTextField();
         JButton searchButton = new JButton("Rechercher");
-        JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        searchPanel.add(searchField);
-        searchPanel.add(searchButton);
+
+        buttonPanel.add(searchField);
+        buttonPanel.add(searchButton);
 
         // Bouton de connexion
         JButton loginButton = new JButton("Se connecter");
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ConnexionView connexionView = new ConnexionView(statutUtilisateur, connexion);
+                ConnexionView connexionView = new ConnexionView(statutUtilisateur);
                 connexionView.setVisible(true);
             }
         });
-        JPanel loginPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        loginPanel.add(loginButton);
+        buttonPanel.add(loginButton, BorderLayout.EAST);
+
+        JButton ajoutFilm = new JButton("Ajouter Film");
+        ajoutFilm.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AjouterFilmView ajouterFilmView = new AjouterFilmView(statutUtilisateur);
+                ajouterFilmView.setVisible(true);
+            }
+        });
+        buttonPanel.add(ajoutFilm, BorderLayout.WEST);
 
         // Liste des films
         JPanel moviesPanel = new JPanel(new GridLayout(0, 1));
         ListeFilms listeFilms = new ListeFilms();
 
         // Obtenez la liste des films en utilisant la connexion passée en paramètre
-        List<Film> films = listeFilms.getFilms(connexion);
+        List<Film> films = listeFilms.getFilms();
 
         // Pour chaque film, créer un bouton représentant ce film
         for (Film film : films) {
-            JButton filmButton = new JButton(film.getNom()); // Suppose que getNom() retourne le titre du film
+            // Construire le chemin de l'image à partir de l'identifiant du film
+            String imagePath = film.getFilmId() + ".png";
+
+            // Charger l'image depuis le chemin spécifié
+            ImageIcon icon = new ImageIcon(imagePath);
+
+            // Créer un bouton avec l'image chargée et le titre du film comme texte
+            JButton filmButton = new JButton(film.getNom(), icon); // Suppose que getNom() retourne le titre du film
+
+            // Ajouter un écouteur d'événements pour gérer le clic sur le bouton de film
             filmButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -63,14 +78,14 @@ public class PageAccueil extends JFrame {
                     // Par exemple, ouvrir une nouvelle fenêtre pour afficher les détails du film
                 }
             });
-            moviesPanel.add(filmButton); // Ajouter le bouton de film au panneau des films
+
+            // Ajouter le bouton de film au panneau des films
+            moviesPanel.add(filmButton);
         }
-
-
+        JPanel contentPane = new JPanel();
         // Ajouter les composants au panneau principal
-        contentPane.add(searchPanel, BorderLayout.NORTH);
+        contentPane.add(buttonPanel, BorderLayout.NORTH);
         contentPane.add(moviesPanel, BorderLayout.CENTER);
-        contentPane.add(loginPanel, BorderLayout.SOUTH);
 
         // Configurer la fenêtre
         setTitle("Page d'accueil");
@@ -81,4 +96,3 @@ public class PageAccueil extends JFrame {
         setVisible(true);
     }
 }
-

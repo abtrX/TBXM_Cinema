@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import Controller.CreerCompteController;
 
@@ -59,7 +60,7 @@ public class CreationCompteView extends JFrame {
                 // Vous pouvez utiliser une méthode du contrôleur pour gérer cela
                 CreerCompteController.creerCompte(newUser);
                 // Rediriger vers la page de connexion
-                CreerCompteController.redirigerVersConnexion();
+                CreerCompteController.redirigerVersConnexion(statut);
             }
         });
 

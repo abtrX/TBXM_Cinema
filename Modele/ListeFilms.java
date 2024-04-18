@@ -7,11 +7,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Modele.ConnexionBDD;
+
 public class ListeFilms {
 
-    public static List<Film> getFilms(Connection connexion) {
+    public static List<Film> getFilms() {
         List<Film> films = new ArrayList<>();
-
+        Connection connexion = null;
+        try {
+            connexion = ConnexionBDD.obtenirConnexion();
+            // Use the connection object
+        } catch (SQLException e) {
+            // Handle the SQLException
+            e.printStackTrace(); // Or handle it in another appropriate way
+        }
         try {
             String sql = "SELECT * FROM film";
             PreparedStatement statement = connexion.prepareStatement(sql);

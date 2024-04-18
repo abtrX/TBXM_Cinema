@@ -8,15 +8,15 @@ import java.sql.Connection;
 public class ConnexionController {
     private Connection connexion;
 
-    public static void connecter(String[] informationsConnexion, String statutUtilisateur, Connection connexion) {
+    public static void connecter(String[] informationsConnexion, String statutUtilisateur) {
     statutUtilisateur = ConnexionModele.connecter(informationsConnexion);
     while (statutUtilisateur == null) {
-        ConnexionView connexionView = new ConnexionView(statutUtilisateur, connexion);
+        ConnexionView connexionView = new ConnexionView(statutUtilisateur);
         connexionView.setVisible(true);
         //print un message d'erreur invitant à l'utilisateur à recommencer
     }
     // Si les informations de connexion sont valides, ouvrir la page appropriée
-    PageAccueil pageAccueil = new PageAccueil(connexion, statutUtilisateur);
+    PageAccueil pageAccueil = new PageAccueil(statutUtilisateur);
     pageAccueil.setVisible(true);
     }
 }

@@ -3,12 +3,12 @@ package Controller;
 import Modele.CreationCompteModele;
 import View.ConnexionView;
 
+import java.sql.Connection;
+
 public class CreerCompteController {
 
-    // Votre autre code ici
-
-    public static void redirigerVersConnexion() {
-        ConnexionView connexionView = new ConnexionView();
+    public static void redirigerVersConnexion(String statutUtilisateur) {
+        ConnexionView connexionView = new ConnexionView(statutUtilisateur);
         connexionView.setVisible(true);
     }
 
@@ -20,9 +20,8 @@ public class CreerCompteController {
 
         // Envoyer les données au modèle pour créer le compte
         CreationCompteModele.creerCompte(nom, mail, motDePasse, statut);
-
         // Rediriger vers la page de connexion après avoir créé le compte
-        redirigerVersConnexion();
+        redirigerVersConnexion(statut);
     }
 }
 

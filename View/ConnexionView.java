@@ -15,7 +15,7 @@ public class ConnexionView extends JFrame {
 
     private Connection connexion;
 
-    public ConnexionView(String statutUtilisateur, Connection connexion) {
+    public ConnexionView(String statutUtilisateur) {
         // Création de la fenêtre
         setTitle("Connexion ou Inscription");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -49,7 +49,7 @@ public class ConnexionView extends JFrame {
                 String password = new String(passwordField.getPassword());
                 String[] informationsConnexion = {mail, password};
                 // Passer les informations de connexion au contrôleur
-                ConnexionController.connecter(informationsConnexion, statutUtilisateur, connexion);
+                ConnexionController.connecter(informationsConnexion, statutUtilisateur);
             }
         });
 
@@ -59,7 +59,7 @@ public class ConnexionView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Ouvrir la vue d'inscription
                 dispose(); // Fermer la fenêtre de connexion
-                CreationCompteView inscriptionView = new CreationCompteView(connexion);
+                CreationCompteView inscriptionView = new CreationCompteView();
                 inscriptionView.setVisible(true);
             }
         });

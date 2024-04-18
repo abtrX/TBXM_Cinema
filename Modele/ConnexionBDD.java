@@ -36,7 +36,7 @@ public class ConnexionBDD {
             Connection connexion = obtenirConnexion();
             String statutUtilisateur = null;
             // Appeler la page d'accueil en lui passant la connexion
-            PageAccueil pageAccueil = new PageAccueil(connexion, statutUtilisateur);
+            PageAccueil pageAccueil = new PageAccueil(statutUtilisateur);
             pageAccueil.setVisible(true);
             // Fermeture de la connexion à la base de données
             fermerConnexion(connexion);
