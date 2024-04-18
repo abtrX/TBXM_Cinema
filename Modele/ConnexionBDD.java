@@ -12,11 +12,14 @@ public class ConnexionBDD {
     private static final String UTILISATEUR = "root";
 
     public static Connection obtenirConnexion() throws SQLException {
+        //String motDePasse = "useruser"; // Remplacez "votre_mot_de_passe" par le mot de passe de l'utilisateur 'root'
         Properties properties = new Properties();
         properties.setProperty("user", UTILISATEUR);
+        //properties.setProperty("password", motDePasse); // Spécifiez le mot de passe
 
         return DriverManager.getConnection(URL, properties);
     }
+
 
     public static void fermerConnexion(Connection connexion) {
         if (connexion != null) {

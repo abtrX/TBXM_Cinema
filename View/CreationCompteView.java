@@ -58,6 +58,8 @@ public class CreationCompteView extends JFrame {
                 // Passer les données au contrôleur
                 // Vous pouvez utiliser une méthode du contrôleur pour gérer cela
                 CreerCompteController.creerCompte(newUser);
+                // Rediriger vers la page de connexion
+                CreerCompteController.redirigerVersConnexion();
             }
         });
 
