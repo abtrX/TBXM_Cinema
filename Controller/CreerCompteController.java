@@ -3,19 +3,26 @@ package Controller;
 import Modele.CreationCompteModele;
 import View.ConnexionView;
 
-import java.sql.Connection;
-
 public class CreerCompteController {
 
-    private Connection connexion;
+    // Votre autre code ici
 
-    public static void creerCompte(String[] donneesUtilisateur, Connection connexion) {
-        String Nom = donneesUtilisateur[0];
-        String Mail = donneesUtilisateur[1];
-        String MotDePasse = donneesUtilisateur[2];
-        String Statut = donneesUtilisateur[3];
-        CreationCompteModele.creerCompte(Nom, Mail, MotDePasse, Statut);
-        ConnexionView connexionView = new ConnexionView(Statut, connexion);
+    public static void redirigerVersConnexion() {
+        ConnexionView connexionView = new ConnexionView();
         connexionView.setVisible(true);
     }
+
+    public static void creerCompte(String[] donneesUtilisateur) {
+        String nom = donneesUtilisateur[0];
+        String mail = donneesUtilisateur[1];
+        String motDePasse = donneesUtilisateur[2];
+        String statut = donneesUtilisateur[3];
+
+        // Envoyer les données au modèle pour créer le compte
+        CreationCompteModele.creerCompte(nom, mail, motDePasse, statut);
+
+        // Rediriger vers la page de connexion après avoir créé le compte
+        redirigerVersConnexion();
+    }
 }
+
