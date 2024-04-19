@@ -37,7 +37,7 @@ public class InfoFilm extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+/*
     // Méthode pour charger une image à partir du chemin spécifié
     private BufferedImage loadImage(String imagePath) {
         try {
@@ -47,4 +47,6 @@ public class InfoFilm extends JFrame {
             return null;
         }
     }
+
+ */
 }
