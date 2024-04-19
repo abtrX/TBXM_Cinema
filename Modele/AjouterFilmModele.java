@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import DAO.ConnexionBDD;
+
 public class AjouterFilmModele {
     private Connection connexion;
     public static void ajouterFilm(String Nom, String Auteur) {

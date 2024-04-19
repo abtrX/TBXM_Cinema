@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import DAO.ConnexionBDD;
+
 public class CreationCompteModele {
     //commentaires
     public static void creerCompte(String Nom, String Mail, String MotDePasse, String Statut) {

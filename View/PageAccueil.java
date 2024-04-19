@@ -11,39 +11,29 @@ import java.io.File;
 
 import Modele.ListeFilms.Film;
 import Modele.ListeFilms;
+import Controller.RechercherController;
 
 public class PageAccueil extends JFrame {
 
     public PageAccueil(String statutUtilisateur) {
         Connection connexion;
-        JPanel buttonPanel = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                g.setColor(Color.BLACK);
-                g.fillRect(0, 0, getWidth(), getHeight());
-            }
-        };
-        buttonPanel.setLayout(new BorderLayout());
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER)); // Utiliser FlowLayout pour aligner les composants au centre
 
         // Barre de recherche
-        JTextField searchField = new JTextField();
+        JTextField searchField = new JTextField(20); // Spécifiez la largeur du champ de recherche
         JButton searchButton = new JButton("Rechercher");
-
-        buttonPanel.add(searchField);
-        buttonPanel.add(searchButton);
 
         // Bouton de connexion
         JButton loginButton = new JButton("Se connecter");
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ConnexionView connexionView = new ConnexionView(statutUtilisateur);
+                ConnexionView connexionView = new ConnexionView();
                 connexionView.setVisible(true);
             }
         });
-        buttonPanel.add(loginButton, BorderLayout.EAST);
 
+        // Bouton d'ajout de film (pour les employés)
         JButton ajoutFilm = new JButton("Ajouter Film");
         ajoutFilm.addActionListener(new ActionListener() {
             @Override
@@ -52,13 +42,22 @@ public class PageAccueil extends JFrame {
                 ajouterFilmView.setVisible(true);
             }
         });
-        buttonPanel.add(ajoutFilm, BorderLayout.WEST);
-
-        // Créer un JPanel pour les films et utiliser un GridLayout avec un nombre fixe de colonnes
-        JPanel moviesPanel = new JPanel(new GridLayout(0, 3)); // 3 colonnes par ligne
 
         ListeFilms listeFilms = new ListeFilms();
         List<Film> films = listeFilms.getFilms();
+
+        // Créer un JPanel pour les films et utiliser un GridBagLayout
+        JPanel moviesPanel = new JPanel(new GridBagLayout());
+
+        // Créer un objet GridBagConstraints pour contrôler le positionnement et la taille des composants
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL; // Permet aux composants de remplir l'espace disponible horizontalement
+        gbc.gridx = 0; // Commencer à partir de la première colonne
+        gbc.gridy = 0; // Commencer à partir de la première ligne
+        gbc.insets = new Insets(10, 10, 10, 10); // Marge autour de chaque composant
+
+        // Créer un objet Dimension avec les dimensions souhaitées
+        Dimension buttonSize = new Dimension(350, 550); // Largeur: 150 pixels, Hauteur: 200 pixels
 
         for (Film film : films) {
             String imagePath = "C:\\ECE\\Ing 3\\Java\\TBXM_Cinema\\View\\" + film.getFilmId() + ".png";
@@ -77,21 +76,47 @@ public class PageAccueil extends JFrame {
                 }
 
                 JButton filmButton = new JButton(icon);
-                JLabel titleLabel = new JLabel(film.getNom(), SwingConstants.CENTER);
 
-                // Créer un JPanel pour chaque film
-                JPanel filmPanel = new JPanel(new BorderLayout());
-                filmPanel.add(filmButton, BorderLayout.CENTER);
-                filmPanel.add(titleLabel, BorderLayout.SOUTH);
+                // Définir la taille préférée du bouton
+                filmButton.setPreferredSize(buttonSize);
 
-                // Ajouter le JPanel du film au panneau des films
-                moviesPanel.add(filmPanel);
+                // Définir la taille maximale du bouton pour garantir que le GridBagLayout respecte la taille préférée
+                filmButton.setMaximumSize(buttonSize);
 
+                // Ajouter le bouton au panneau des films avec les contraintes définies
+                moviesPanel.add(filmButton, gbc);
+
+                // Passer à la prochaine colonne pour le prochain bouton
+                gbc.gridx++;
+
+                // Si la colonne atteint la largeur de la fenêtre, passer à la ligne suivante
+                if (gbc.gridx == 4) {
+                    gbc.gridx = 0; // Revenir à la première colonne
+                    gbc.gridy++;   // Aller à la ligne suivante
+                }
             } catch (Exception ex) {
                 System.err.println("Erreur lors du chargement de l'image : " + ex.getMessage());
             }
         }
 
+        if (statutUtilisateur == null) {
+            // Ajouter les composants au buttonPanel
+            buttonPanel.add(searchField);
+            buttonPanel.add(searchButton);
+            buttonPanel.add(loginButton, BorderLayout.WEST);
+        } else if (statutUtilisateur.equals("client")) {
+            // Ajouter les composants au buttonPanel
+            buttonPanel.add(searchField);
+            buttonPanel.add(searchButton);
+        } else if (statutUtilisateur.equals("employe")) {
+            // Ajouter les composants au buttonPanel
+            buttonPanel.add(ajoutFilm, BorderLayout.EAST);
+            buttonPanel.add(searchField);
+            buttonPanel.add(searchButton);
+        }
+
+        // Ajouter le buttonPanel à la partie nord de la fenêtre
+        add(buttonPanel, BorderLayout.NORTH);
 
         // Ajouter le panneau des films dans un JScrollPane
         JScrollPane moviesScrollPane = new JScrollPane(moviesPanel);

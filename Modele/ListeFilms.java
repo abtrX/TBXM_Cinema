@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Modele.ConnexionBDD;
+import DAO.ConnexionBDD;
 
 public class ListeFilms {
 

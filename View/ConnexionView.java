@@ -4,20 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
 
 import Controller.ConnexionController;
-
 
 public class ConnexionView extends JFrame {
     private JTextField mailField;
     private JPasswordField passwordField;
 
-    private Connection connexion;
-
-    public ConnexionView(String statutUtilisateur) {
+    public ConnexionView() {
         // Création de la fenêtre
-        setTitle("Connexion ou Inscription");
+        setTitle("Connexion");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(300, 200);
         setLocationRelativeTo(null);
@@ -38,6 +34,7 @@ public class ConnexionView extends JFrame {
         panel.add(connexionButton);
         panel.add(inscriptionButton);
 
+
         // Ajout du panel à la fenêtre
         add(panel);
 
@@ -48,11 +45,20 @@ public class ConnexionView extends JFrame {
                 String mail = mailField.getText();
                 String password = new String(passwordField.getPassword());
                 String[] informationsConnexion = {mail, password};
-                // Passer les informations de connexion au contrôleur
-                ConnexionController.connecter(informationsConnexion, statutUtilisateur);
+                // Tentative de connexion
+                String statutUtilisateur = ConnexionController.connecter(informationsConnexion);
+                if (statutUtilisateur != null) {
+                    // Si la connexion réussit, fermer la fenêtre de connexion
+                    dispose();
+                    // Ouvrir la page d'accueil avec le statut utilisateur
+                    PageAccueil pageAccueil = new PageAccueil(statutUtilisateur);
+                    pageAccueil.setVisible(true);
+                } else {
+                    // Si la connexion échoue, afficher un message d'erreur
+                    JOptionPane.showMessageDialog(ConnexionView.this, "Erreur de connexion. Veuillez réessayer.", "Erreur", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
-
         // Action listener pour le bouton d'inscription
         inscriptionButton.addActionListener(new ActionListener() {
             @Override
@@ -65,10 +71,12 @@ public class ConnexionView extends JFrame {
         });
     }
 
-    // Méthode pour récupérer les informations de connexion
-    public String[] saisirInformationsConnexion() {
-        String mail = mailField.getText();
-        String password = new String(passwordField.getPassword());
-        return new String[]{mail, password};
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                ConnexionView connexionView = new ConnexionView();
+                connexionView.setVisible(true);
+            }
+        });
     }
 }
