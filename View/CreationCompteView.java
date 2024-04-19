@@ -15,31 +15,36 @@ public class CreationCompteView extends JFrame {
     private JPasswordField passwordField;
     private JTextField statutField;
 
-    public CreationCompteView() {
+    public CreationCompteView(String statutUtilisteur) {
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Création de compte");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 200);
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel(new GridLayout(5, 2));
+
         JLabel nomLabel = new JLabel("Nom : ");
         nomField = new JTextField();
-        JLabel mailLabel = new JLabel("Mail : ");
-        mailField = new JTextField();
-        JLabel passwordLabel = new JLabel("Mot de passe : ");
-        passwordField = new JPasswordField();
-        JLabel statutLabel = new JLabel("Statut (client ou employé) : ");
-        statutField = new JTextField();
-        JButton creerButton = new JButton("Créer");
-
         panel.add(nomLabel);
         panel.add(nomField);
+        JLabel mailLabel = new JLabel("Mail : ");
+        mailField = new JTextField();
         panel.add(mailLabel);
         panel.add(mailField);
+        String statutTempo = statutUtilisteur;
+        if ("employe".equals(statutTempo)) {
+            JLabel statutLabel = new JLabel("Statut (client ou employé) : ");
+            statutField = new JTextField();
+            panel.add(statutLabel);
+            panel.add(statutField);
+        }
+
+        JLabel passwordLabel = new JLabel("Mot de passe : ");
+        passwordField = new JPasswordField();
         panel.add(passwordLabel);
         panel.add(passwordField);
-        panel.add(statutLabel);
-        panel.add(statutField);
+
+        JButton creerButton = new JButton("Créer");
         panel.add(new JLabel()); // Pour occuper la colonne vide
         panel.add(creerButton);
 
@@ -51,8 +56,10 @@ public class CreationCompteView extends JFrame {
                 String nom = nomField.getText();
                 String mail = mailField.getText();
                 String motDePasse = new String(passwordField.getPassword());
-                String statut = statutField.getText();
-
+                String statut = "client";
+                if (statutUtilisteur == "employe") {
+                    statut = statutField.getText();
+                }
                 // Envoyer les données au contrôleur
                 // Vous pouvez utiliser une méthode du contrôleur pour gérer cela
                 String[] newUser = {nom, mail, motDePasse, statut};

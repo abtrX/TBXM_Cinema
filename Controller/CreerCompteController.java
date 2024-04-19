@@ -8,7 +8,7 @@ import java.sql.Connection;
 public class CreerCompteController {
 
     public static void redirigerVersConnexion(String statutUtilisateur) {
-        ConnexionView connexionView = new ConnexionView();
+        ConnexionView connexionView = new ConnexionView(statutUtilisateur);
         connexionView.setVisible(true);
     }
 

@@ -11,10 +11,10 @@ public class ConnexionView extends JFrame {
     private JTextField mailField;
     private JPasswordField passwordField;
 
-    public ConnexionView() {
+    public ConnexionView(String statutUtilisateur) {
         // Création de la fenêtre
         setTitle("Connexion");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(300, 200);
         setLocationRelativeTo(null);
 
@@ -33,7 +33,6 @@ public class ConnexionView extends JFrame {
         panel.add(passwordField);
         panel.add(connexionButton);
         panel.add(inscriptionButton);
-
 
         // Ajout du panel à la fenêtre
         add(panel);
@@ -65,17 +64,8 @@ public class ConnexionView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Ouvrir la vue d'inscription
                 dispose(); // Fermer la fenêtre de connexion
-                CreationCompteView inscriptionView = new CreationCompteView();
+                CreationCompteView inscriptionView = new CreationCompteView(statutUtilisateur);
                 inscriptionView.setVisible(true);
-            }
-        });
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                ConnexionView connexionView = new ConnexionView();
-                connexionView.setVisible(true);
             }
         });
     }

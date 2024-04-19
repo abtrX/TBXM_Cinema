@@ -41,7 +41,7 @@ public class AjouterFilmView extends JFrame {
         contentPane.add(ajouterButton);
 
         setTitle("Ajouter Film");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setContentPane(contentPane);
         pack();
         setLocationRelativeTo(null);
