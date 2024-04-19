@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.util.List;
+import java.io.File;
+
 
 import Modele.ListeFilms.Film;
 import Modele.ListeFilms;
@@ -52,42 +54,56 @@ public class PageAccueil extends JFrame {
         });
         buttonPanel.add(ajoutFilm, BorderLayout.WEST);
 
-        // Liste des films
-        JPanel moviesPanel = new JPanel(new GridLayout(0, 1));
-        ListeFilms listeFilms = new ListeFilms();
+        // Créer un JPanel pour les films et utiliser un GridLayout avec un nombre fixe de colonnes
+        JPanel moviesPanel = new JPanel(new GridLayout(0, 3)); // 3 colonnes par ligne
 
-        // Obtenez la liste des films en utilisant la connexion passée en paramètre
+        ListeFilms listeFilms = new ListeFilms();
         List<Film> films = listeFilms.getFilms();
 
-        // Pour chaque film, créer un bouton représentant ce film
         for (Film film : films) {
-            // Construire le chemin de l'image à partir de l'identifiant du film
-            String imagePath = film.getFilmId() + ".png";
+            String imagePath = "C:\\ECE\\Ing 3\\Java\\TBXM_Cinema\\View\\" + film.getFilmId() + ".png";
 
-            // Charger l'image depuis le chemin spécifié
-            ImageIcon icon = new ImageIcon(imagePath);
+            if (!new File(imagePath).exists()) {
+                System.err.println("L'image n'existe pas : " + imagePath);
+                continue; // Passer au film suivant
+            }
 
-            // Créer un bouton avec l'image chargée et le titre du film comme texte
-            JButton filmButton = new JButton(film.getNom(), icon); // Suppose que getNom() retourne le titre du film
+            try {
+                ImageIcon icon = new ImageIcon(imagePath);
 
-            // Ajouter un écouteur d'événements pour gérer le clic sur le bouton de film
-            filmButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    // Gérer l'action lorsque l'utilisateur clique sur ce bouton de film
-                    // Par exemple, ouvrir une nouvelle fenêtre pour afficher les détails du film
+                if (icon.getImageLoadStatus() != MediaTracker.COMPLETE) {
+                    System.err.println("Erreur lors du chargement de l'image : " + imagePath);
+                    continue; // Passer au film suivant
                 }
-            });
 
-            // Ajouter le bouton de film au panneau des films
-            moviesPanel.add(filmButton);
+                JButton filmButton = new JButton(icon);
+                JLabel titleLabel = new JLabel(film.getNom(), SwingConstants.CENTER);
+
+                // Créer un JPanel pour chaque film
+                JPanel filmPanel = new JPanel(new BorderLayout());
+                filmPanel.add(filmButton, BorderLayout.CENTER);
+                filmPanel.add(titleLabel, BorderLayout.SOUTH);
+
+                // Ajouter le JPanel du film au panneau des films
+                moviesPanel.add(filmPanel);
+
+            } catch (Exception ex) {
+                System.err.println("Erreur lors du chargement de l'image : " + ex.getMessage());
+            }
         }
-        JPanel contentPane = new JPanel();
-        // Ajouter les composants au panneau principal
-        contentPane.add(buttonPanel, BorderLayout.NORTH);
-        contentPane.add(moviesPanel, BorderLayout.CENTER);
 
-        // Configurer la fenêtre
+
+        // Ajouter le panneau des films dans un JScrollPane
+        JScrollPane moviesScrollPane = new JScrollPane(moviesPanel);
+
+        // Ajouter le JScrollPane à la fenêtre
+        add(moviesScrollPane, BorderLayout.CENTER);
+
+        // Créer un JPanel pour contenir les boutons et le JScrollPane
+        JPanel contentPane = new JPanel(new BorderLayout());
+        contentPane.add(buttonPanel, BorderLayout.NORTH);
+        contentPane.add(moviesScrollPane, BorderLayout.CENTER);
+
         setTitle("Page d'accueil");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(contentPane);

@@ -3,10 +3,7 @@ package Controller;
 import Modele.AjouterFilmModele;
 import Modele.CreationCompteModele;
 import View.AjouterFilmView;
-import View.ConnexionView;
-
-import java.math.BigDecimal;
-import java.sql.Connection;
+import View.PageAccueil;
 
 public class AjouterFilmController {
     private static AjouterFilmView View;
@@ -14,8 +11,8 @@ public class AjouterFilmController {
 
     public static void ajouterFilm(String Nom, String Auteur, String statutUtilisateur) {
         AjouterFilmModele.ajouterFilm(Nom, Auteur);
-        ConnexionView connexionView = new ConnexionView(statutUtilisateur);
-        connexionView.setVisible(true);
+        PageAccueil pageAccueil = new PageAccueil(statutUtilisateur);
+        pageAccueil.setVisible(true);
     }
 
 
