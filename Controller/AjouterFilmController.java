@@ -1,20 +1,23 @@
 package Controller;
 
-import javax.swing.*;
-
 import Modele.AjouterFilmModele;
+import Modele.CreationCompteModele;
 import View.AjouterFilmView;
+import View.ConnexionView;
 import View.PageAccueil;
 
+import java.math.BigDecimal;
+import java.sql.Connection;
+
 public class AjouterFilmController {
-    private static AjouterFilmView View;
-    private static AjouterFilmModele Modele;
+    private static AjouterFilmView view;
+    private static AjouterFilmModele modele;
 
     public static void ajouterFilm(String Nom, String Auteur, String statutUtilisateur) {
-        Modele = new AjouterFilmModele(); // Création de l'instance de AjouterFilmModele
-        Modele.ajouterFilm(Nom, Auteur); // Appel de la méthode ajouterFilm du modèle
-        PageAccueil pageAccueil = new PageAccueil(statutUtilisateur);
-        View.dispose(); // Fermeture de la fenêtre AjouterFilmView
+        AjouterFilmModele.ajouterFilm(Nom, Auteur);
+        PageAccueil pageAccueil=new PageAccueil(statutUtilisateur);
         pageAccueil.setVisible(true);
     }
+
+
 }

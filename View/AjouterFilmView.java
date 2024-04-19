@@ -35,7 +35,7 @@ public class AjouterFilmView extends JFrame {
                 String realisateur = realisateurField.getText();
 
 
-                AjouterFilmController.ajouterFilm(titre, realisateur, statutUtilisateur);
+                AjouterFilmController.ajouterFilm(titre, realisateur,statutUtilisateur);
             }
         });
         contentPane.add(ajouterButton);
