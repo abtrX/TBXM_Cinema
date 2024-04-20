@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Controller.ConnexionController;
+import Controller.PageAccueilController;
 
 public class ConnexionView extends JFrame {
     private JTextField mailField;

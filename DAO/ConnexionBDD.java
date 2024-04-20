@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import Controller.PageAccueilController;
 import View.PageAccueil;
 
 public class ConnexionBDD {
@@ -12,11 +13,8 @@ public class ConnexionBDD {
     private static final String UTILISATEUR = "root";
 
     public static Connection obtenirConnexion() throws SQLException {
-        //String motDePasse = "useruser"; // Remplacez "votre_mot_de_passe" par le mot de passe de l'utilisateur 'root'
         Properties properties = new Properties();
         properties.setProperty("user", UTILISATEUR);
-        //properties.setProperty("password", motDePasse); // Spécifiez le mot de passe
-
         return DriverManager.getConnection(URL, properties);
     }
 
@@ -35,7 +33,6 @@ public class ConnexionBDD {
         try {
             Connection connexion = obtenirConnexion();
             String statutUtilisateur = null;
-            // Appeler la page d'accueil en lui passant la connexion
             PageAccueil pageAccueil = new PageAccueil(statutUtilisateur);
             pageAccueil.setVisible(true);
             // Fermeture de la connexion à la base de données
