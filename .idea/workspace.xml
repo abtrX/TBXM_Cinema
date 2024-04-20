@@ -4,90 +4,160 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e67211-a480-4aae-ab57-0f89cd6eeed7" name="Changes" comment="Ajout Séances" />
+    <list default="true" id="a9d171a9-0d34-42cd-9335-fc9fc1e9651a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_251.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/bdd_cinema.biEpUw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/AjouterFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/AjouterFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/AjouterSeanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/AjouterSeanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ConnexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ConnexionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CreerCompteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CreerCompteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/InfoFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/InfoFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/PageAccueilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/PageAccueilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/RechercherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/RechercherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ConnexionBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ConnexionBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/AjouterFilmModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/AjouterFilmModele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/AjouterSeanceModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/AjouterSeanceModele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/ConnexionModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/ConnexionModele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/CreationCompteModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/CreationCompteModele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/InfoFilmModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/InfoFilmModele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/ListeFilms.java" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/ListeFilms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TBXM_Cinema.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TBXM_Cinema.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/AjouterFilmView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/AjouterFilmView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/AjouterSeanceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/AjouterSeanceView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ConnexionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnexionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CreationCompteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/CreationCompteView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/InfoFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/InfoFilm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/PageAccueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/PageAccueil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/bdd_cinema.biEpUw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dataSources/885d7db5-fe27-4350-b9b6-9d6dd6830280/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/libraries/mysql_connector_java_8_0_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/libraries/mysql_connector_java_8_0_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/AjouterFilmController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/AjouterFilmController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/AjouterSeanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/AjouterSeanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/ConnexionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/ConnexionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/CreerCompteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/CreerCompteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/InfoFilmController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/InfoFilmController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/PageAccueilController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/PageAccueilController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/RechercherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/Controller/RechercherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/DAO/ConnexionBDD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/AjouterFilmModele.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/AjouterSeanceModele.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/ConnexionModele.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/CreationCompteModele.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/InfoFilmModele.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/ListeFilms$Film.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/Modele/ListeFilms.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/TBXM_Cinema.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/TBXM_Cinema.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterFilmView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterFilmView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterFilmView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterFilmView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterSeanceView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterSeanceView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterSeanceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/AjouterSeanceView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/ConnexionView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/ConnexionView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/ConnexionView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/ConnexionView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/ConnexionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/ConnexionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/CreationCompteView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/CreationCompteView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/CreationCompteView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/CreationCompteView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/InfoFilm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/InfoFilm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/InfoFilm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/InfoFilm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TBXM_Cinema/View/PageAccueil.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2fKbkXDVW7Pn7WtMvD992FPlJoc" />
+  <component name="ProjectId" id="2fNB8TiNd5YjehbdYsCrRn40iyR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConnexionBDD.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/maxim/Desktop/ECE/INGE 3/JAVA/TBXM_Cinema",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConnexionBDD.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/xavierhz/Downloads/TBXM_Cinema&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/3ac20f72-b108-43a5-858e-8b3a549c35ca/console.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="04e67211-a480-4aae-ab57-0f89cd6eeed7" name="Changes" comment="" />
-      <created>1713552863494</created>
+      <changelist id="a9d171a9-0d34-42cd-9335-fc9fc1e9651a" name="Changes" comment="" />
+      <created>1713631495330</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713552863494</updated>
-      <workItem from="1713552865049" duration="12000" />
-      <workItem from="1713552916576" duration="12060000" />
-      <workItem from="1713605460071" duration="606000" />
+      <updated>1713631495330</updated>
+      <workItem from="1713631496383" duration="1123000" />
+      <workItem from="1713651952139" duration="879000" />
     </task>
-    <task id="LOCAL-00001" summary="Ajout Séances">
-      <option name="closed" value="true" />
-      <created>1713605364944</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1713605364944</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajout Séances" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout Séances" />
   </component>
 </project>
